@@ -8,6 +8,10 @@ A small Flutter app built to demonstrate three things together:
 
 The app itself: enter a number `N`, and it finds every prime number up to `N` on a background isolate while the UI keeps rendering smoothly.
 
+## Screenshots
+
+<img src="assets/screenshots/1.png" width="200" height="320" />  <img src="assets/screenshots/2.png" width="200" height="320" />  <img src="assets/screenshots/3.png" width="200" height="320" />
+
 ## Why primes?
 
 Prime search is a classic CPU-bound task (no `await`, no I/O — just tight loops), which makes it a good stand-in for anything that would otherwise freeze Flutter's single UI thread: image processing, JSON parsing of huge payloads, encryption, PDF generation, etc.
@@ -92,6 +96,7 @@ flutter run
 ```
 
 Try a large value like `20000000` and watch:
+
 - The segmented LED-style progress meter fill up.
 - The **WORKER ISOLATE** trace turn spiky and busy while the **UI THREAD** trace above it keeps tracing a perfectly smooth sine wave — proof the two are running independently.
 
